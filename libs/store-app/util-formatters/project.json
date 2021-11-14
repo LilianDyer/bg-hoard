@@ -1,0 +1,23 @@
+{
+  "root": "libs/store-app/util-formatters",
+  "sourceRoot": "libs/store-app/util-formatters/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/store-app/util-formatters/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/store-app/util-formatters"],
+      "options": {
+        "jestConfig": "libs/store-app/util-formatters/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
