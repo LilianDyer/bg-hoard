@@ -10,7 +10,18 @@ import { RouterModule } from '@angular/router';
   declarations: [AppComponent, FormatRatingPipe],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' }),
+    RouterModule.forRoot(
+      [
+        {
+          path: 'game/:id',
+          loadChildren: () =>
+            import('@bg-hoard/store-app/feature-game-detail').then(
+              (module) => module.StoreAppFeatureGameDetailModule
+            ),
+        },
+      ],
+      { initialNavigation: 'enabledBlocking' }
+    ),
     MatCardModule,
     StoreAppUiSharedModule,
   ],
